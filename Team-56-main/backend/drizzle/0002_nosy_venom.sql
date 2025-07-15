@@ -1,0 +1,1 @@
+ALTER TABLE "assessments" ALTER COLUMN "bmi" SET DATA TYPE numeric(5, 2);

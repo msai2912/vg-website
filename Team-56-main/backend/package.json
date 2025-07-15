@@ -1,0 +1,43 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm install && npx drizzle-kit generate && npx drizzle-kit push && node index.js",
+    "dev": "npm install && node index.js",
+    "seed": "node scripts/seed.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@ai-sdk/google": "^1.2.19",
+    "@neondatabase/serverless": "^1.0.1",
+    "@opentelemetry/api": "^1.8.0",
+    "@opentelemetry/auto-instrumentations-node": "^0.46.0",
+    "@opentelemetry/exporter-jaeger": "^1.24.0",
+    "@opentelemetry/sdk-node": "^0.51.0",
+    "ai": "^4.3.16",
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.0",
+    "drizzle-orm": "^0.44.2",
+    "express": "^5.1.0",
+    "express-session": "^1.18.1",
+    "jsonwebtoken": "^9.0.2",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-local": "^1.0.0",
+    "pg": "^8.16.2",
+    "prom-client": "^15.1.0",
+    "winston": "^3.13.0",
+    "winston-loki": "^6.1.0"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.31.3"
+  }
+}

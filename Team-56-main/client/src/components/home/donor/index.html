@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Support Visions Global Empowerment – India. Make a secure donation to empower youth and transform communities through education, leadership, and innovative solutions.">
+    <meta name="keywords" content="donation, Visions India, youth empowerment, community development, education, leadership, India, nonprofit">
+    <meta name="author" content="Visions Global Empowerment – India">
+    <meta property="og:title" content="Make a Donation - Visions Global Empowerment – India">
+    <meta property="og:description" content="Empower youth and transform communities. Your donation supports education, leadership, and innovative solutions across India.">
+    <meta property="og:type" content="website">
+    <title>Make a Donation - Visions Global Empowerment – India | Empowering Youth & Communities</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Debug indicator -->
+    <div id="debugIndicator" style="position: fixed; top: 0; left: 0; background: red; color: white; padding: 5px 10px; z-index: 9999; font-size: 12px;">
+        Loading... If you see this, the page is working!
+    </div>
+    
+    <div class="app-container">
+        <!-- Header -->
+        <header class="main-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo">
+                        <img src="visions-logo.png" alt="Visions Global Empowerment – India" class="logo-image">
+                        <span data-translate="org_name">Visions Global Empowerment – India</span>
+                    </div>
+                    <p class="tagline" data-translate="tagline">Empowering Youth. Transforming Communities.</p>
+                </div>
+                <div class="header-actions" style="display: flex !important; align-items: center; min-height: 60px;">
+                    <div class="language-toggle" style="position: relative;">
+                        <button id="languageToggle" class="language-btn" title="Switch Language" 
+                                style="display: flex !important; align-items: center; gap: 8px; background: rgba(255,255,255,0.2) !important; 
+                                       border: 2px solid rgba(255,255,255,0.4) !important; color: white !important; 
+                                       padding: 12px 20px !important; border-radius: 8px !important; cursor: pointer !important; 
+                                       font-size: 16px !important; font-weight: bold !important; margin: 0 !important;
+                                       box-shadow: 0 2px 8px rgba(0,0,0,0.2) !important;">
+                            🌐 <span id="currentLang" style="color: white !important;">EN</span> ▼
+                        </button>
+                        <div id="languageDropdown" class="language-dropdown" 
+                             style="position: absolute; top: 100%; right: 0; margin-top: 8px; background: white; 
+                                    border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+                                    min-width: 150px; z-index: 1000; display: none;">
+                            <div class="language-option" data-lang="en" 
+                                 style="display: flex; align-items: center; gap: 8px; padding: 12px 16px; cursor: pointer; 
+                                        color: #333; font-size: 14px; border-radius: 8px 8px 0 0;">
+                                <span class="flag">🇺🇸</span>
+                                <span class="lang-name">English</span>
+                            </div>
+                            <div class="language-option" data-lang="ta" 
+                                 style="display: flex; align-items: center; gap: 8px; padding: 12px 16px; cursor: pointer; 
+                                        color: #333; font-size: 14px; border-radius: 0 0 8px 8px;">
+                                <span class="flag">🇮🇳</span>
+                                <span class="lang-name">தமிழ்</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="donation-container">
+                <!-- Mission Summary -->
+                <div class="mission-summary" style="grid-column: 1 / -1; margin-bottom: 1.5rem;">
+                    <strong data-translate="our_mission">Our Mission:</strong> <span data-translate="mission_text">Visions India empowers youth and communities to be change agents through education, leadership, and innovative solutions. Since 2016, we've been creating sustainable impact across India.</span>
+                </div>
+                <!-- Left Panel - Donation Form -->
+                <div class="donation-form-panel">
+                    <div class="form-header">
+                        <h1 data-translate="donation_title">Make a Secure Donation</h1>
+                        <p data-translate="donation_description">Your contribution directly supports youth empowerment programs, community development initiatives, and educational opportunities across India</p>
+                    </div>
+
+                    <form id="donationForm" class="donation-form">
+                        <!-- Donation Amount Section -->
+                        <div class="form-section amount-section">
+                            <h2 data-translate="select_amount">Select Donation Amount</h2>
+                            <div class="amount-options">
+                                <div class="amount-option" data-amount="500">
+                                    <span class="amount">₹500</span>
+                                    <span class="description" data-translate="amount_500_desc">Provides educational materials for 2 children</span>
+                                </div>
+                                <div class="amount-option" data-amount="1000">
+                                    <span class="amount">₹1,000</span>
+                                    <span class="description" data-translate="amount_1000_desc">Supports a youth leadership workshop</span>
+                                </div>
+                                <div class="amount-option" data-amount="2500">
+                                    <span class="amount">₹2,500</span>
+                                    <span class="description" data-translate="amount_2500_desc">Funds community development project</span>
+                                </div>
+                                <div class="amount-option" data-amount="5000">
+                                    <span class="amount">₹5,000</span>
+                                    <span class="description" data-translate="amount_5000_desc">Establishes a youth empowerment center</span>
+                                </div>
+                                <div class="amount-option custom" data-amount="custom">
+                                    <span class="amount" data-translate="custom">Custom</span>
+                                    <span class="description" data-translate="custom_desc">Enter your own amount</span>
+                                </div>
+                            </div>
+                            <div class="custom-amount-input" style="display: none;">
+                                <label for="customAmount" data-translate="enter_amount">Enter Amount (INR)</label>
+                                <div class="amount-input-wrapper">
+                                    <span class="currency-symbol">₹</span>
+                                    <input type="number" id="customAmount" name="customAmount" min="1" step="1" placeholder="0">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Donor Information -->
+                        <div class="form-section">
+                            <h2 data-translate="your_information">Your Information</h2>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="firstName" data-translate="first_name">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName" data-translate="last_name">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                                <div class="form-group full-width">
+                                    <label for="email" data-translate="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone" data-translate="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone">
+                                </div>
+                                <div class="form-group">
+                                    <label for="country" data-translate="country">Country *</label>
+                                    <select id="country" name="country" required>
+                                        <option value="" data-translate="select_country">Select Country</option>
+                                        <option value="IN">India</option>
+                                        <option value="US">United States</option>
+                                        <option value="CA">Canada</option>
+                                        <option value="UK">United Kingdom</option>
+                                        <option value="AU">Australia</option>
+                                        <option value="DE">Germany</option>
+                                        <option value="FR">France</option>
+                                        <option value="JP">Japan</option>
+                                        <option value="BR">Brazil</option>
+                                        <option value="MX">Mexico</option>
+                                    </select>
+                                </div>
+                                <div class="form-group full-width">
+                                    <label for="address" data-translate="address">Address</label>
+                                    <input type="text" id="address" name="address" data-translate-placeholder="street_address">
+                                </div>
+                                <div class="form-group">
+                                    <label for="city" data-translate="city">City</label>
+                                    <input type="text" id="city" name="city">
+                                </div>
+                                <div class="form-group">
+                                    <label for="state" data-translate="state">State/Province</label>
+                                    <input type="text" id="state" name="state">
+                                </div>
+                                <div class="form-group">
+                                    <label for="zipCode" data-translate="zip_code">ZIP/Postal Code</label>
+                                    <input type="text" id="zipCode" name="zipCode">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Payment Method -->
+                        <div class="form-section">
+                            <h2 data-translate="payment_method">Payment Method</h2>
+                            <div class="payment-methods">
+                                <div class="payment-method active" data-method="card">
+                                    <div class="method-icon">
+                                        <i class="fas fa-credit-card"></i>
+                                    </div>
+                                    <div class="method-info">
+                                        <span class="method-name" data-translate="credit_debit_card">Credit/Debit Card</span>
+                                        <span class="method-description" data-translate="card_desc">Visa, Mastercard, American Express</span>
+                                    </div>
+                                    <div class="method-check">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                </div>
+                                <div class="payment-method" data-method="paypal">
+                                    <div class="method-icon">
+                                        <i class="fab fa-paypal"></i>
+                                    </div>
+                                    <div class="method-info">
+                                        <span class="method-name" data-translate="paypal">PayPal</span>
+                                        <span class="method-description" data-translate="paypal_desc">Pay with your PayPal account</span>
+                                    </div>
+                                    <div class="method-check">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                </div>
+                                <div class="payment-method" data-method="bank">
+                                    <div class="method-icon">
+                                        <i class="fas fa-university"></i>
+                                    </div>
+                                    <div class="method-info">
+                                        <span class="method-name" data-translate="bank_transfer">Bank Transfer</span>
+                                        <span class="method-description" data-translate="bank_desc">Direct bank transfer</span>
+                                    </div>
+                                    <div class="method-check">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Credit Card Form -->
+                            <div id="cardForm" class="payment-form active">
+                                <div class="form-grid">
+                                    <div class="form-group full-width">
+                                        <label for="cardNumber">Card Number *</label>
+                                        <div class="card-input-wrapper">
+                                            <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" required>
+                                            <div class="card-icons">
+                                                <i class="fab fa-cc-visa"></i>
+                                                <i class="fab fa-cc-mastercard"></i>
+                                                <i class="fab fa-cc-amex"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="expiryDate">Expiry Date *</label>
+                                        <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" maxlength="5" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cvv">CVV *</label>
+                                        <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="4" required>
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <label for="cardName">Name on Card *</label>
+                                        <input type="text" id="cardName" name="cardName" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- PayPal Form -->
+                            <div id="paypalForm" class="payment-form">
+                                <div class="paypal-info">
+                                    <i class="fab fa-paypal"></i>
+                                    <p>You will be redirected to PayPal to complete your payment securely.</p>
+                                </div>
+                            </div>
+
+                            <!-- Bank Transfer Form -->
+                            <div id="bankForm" class="payment-form">
+                                <div class="bank-info">
+                                    <i class="fas fa-university"></i>
+                                    <p>Bank transfer details will be provided after form submission.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Additional Options -->
+                        <div class="form-section">
+                            <h2>Additional Options</h2>
+                            <div class="additional-options">
+                                <div class="option-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="recurring" name="recurring">
+                                        <span class="checkmark"></span>
+                                        Make this a monthly recurring donation
+                                    </label>
+                                </div>
+                                <div class="option-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="anonymous" name="anonymous">
+                                        <span class="checkmark"></span>
+                                        Make this donation anonymous
+                                    </label>
+                                </div>
+                                <div class="option-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" id="newsletter" name="newsletter">
+                                        <span class="checkmark"></span>
+                                        Subscribe to our newsletter for updates on our impact
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message (Optional)</label>
+                                <textarea id="message" name="message" rows="3" placeholder="Share why you're making this donation or any specific program you'd like to support..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Submit Section -->
+                        <div class="submit-section">
+                            <div class="security-info">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Your donation is protected by SSL encryption and secure payment processing</span>
+                            </div>
+                            <button type="submit" class="donate-btn">
+                                <i class="fas fa-heart"></i>
+                                Complete Donation
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Right Panel - Summary & Info -->
+                <div class="donation-summary-panel">
+                    <div class="summary-card">
+                        <h3>Donation Summary</h3>
+                        <div class="summary-details">
+                            <div class="summary-row">
+                                <span>Donation Amount:</span>
+                                <span id="summaryAmount">₹0</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Processing Fee:</span>
+                                <span id="summaryFee">₹0</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span>Total:</span>
+                                <span id="summaryTotal">₹0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="impact-card">
+                        <h3>Your Impact</h3>
+                        <div class="impact-stats">
+                            <div class="stat">
+                                <div class="stat-number">10,000+</div>
+                                <div class="stat-label">Children & Youth Empowered</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">50+</div>
+                                <div class="stat-label">Communities Served</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">100%</div>
+                                <div class="stat-label">Grassroots Engagement</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="trust-card">
+                        <h3>Why Trust Us?</h3>
+                        <div class="trust-points">
+                            <div class="trust-point">
+                                <i class="fas fa-certificate"></i>
+                                <span>Registered & Transparent: Officially registered under Indian Trust Act (Reg. No. 65/16)</span>
+                            </div>
+                            <div class="trust-point">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Proven Impact: Transforming thousands of lives since 2016</span>
+                            </div>
+                            <div class="trust-point">
+                                <i class="fas fa-users"></i>
+                                <span>Community-Driven: Programs designed with and for local communities</span>
+                            </div>
+                            <div class="trust-point">
+                                <i class="fas fa-child"></i>
+                                <span>Youth Empowerment: Focused on leadership, education, and technology for youth</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <h3>Need Help?</h3>
+                        <p>Have questions or need assistance with your donation? Our Visions India team is here to help you.</p>
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <i class="fas fa-phone"></i>
+                                <span>+91-44-4857-1234</span>
+                            </div>
+                            <div class="contact-method">
+                                <i class="fas fa-envelope"></i>
+                                <span>info@visionsglobalindia.org</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Visions Global Empowerment – India</h4>
+                    <p>Visions India is an independent nonprofit organization registered under the Indian Trust Act (Reg. No. 65/16) in August 2016.<br>
+                    Founded by three like-minded individuals, each inspired by their own experiences to create meaningful change.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Programs</a></li>
+                        <li><a href="#">Transparency</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Tax Information</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Visions Global Empowerment – India. All rights reserved. | Registered Trust No. 65/16</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fas fa-check-circle success-icon"></i>
+                <h2>Thank You for Your Donation!</h2>
+            </div>
+            <div class="modal-body">
+                <p>Your generous contribution has been successfully processed. You will receive a confirmation email shortly with details about how your donation will create impact.</p>
+                <div id="donationDetails" class="donation-details"></div>
+                <div class="next-steps">
+                    <h4>What happens next?</h4>
+                    <ul>
+                        <li>You'll receive a tax-deductible receipt via email</li>
+                        <li>Your donation will be put to work immediately in our programs</li>
+                        <li>We'll keep you updated on the impact of your gift through our newsletter</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button onclick="closeModal()" class="close-btn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="loadingSpinner" class="loading-spinner">
+        <div class="spinner"></div>
+        <p>Processing your donation securely...</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
